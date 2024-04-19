@@ -17,7 +17,7 @@ createBalls(20);
 for (let i = 0; i < balls.length; i++) {
     balls[i].id = i;
     
-    const temp = Math.random() * 500;
+    const temp = Math.random() + 1 * 250;
     const x =  Math.floor(Math.random() * window.innerWidth - temp);;
     const y =  Math.floor(Math.random() * window.innerHeight - temp);;
 

@@ -10,7 +10,7 @@
     & div {
         -webkit-filter: blur(10px);
         filter: blur(10px);
-        background-color: #000;
+        background-color: #00ffff;
         left: 0px;
         top: 0px;
         width: 50px;
