@@ -2,7 +2,7 @@ const balls = document.getElementsByClassName("balls");
 const metaballs = document.getElementsByClassName("inner-metaballs")[0];
 var gradientRot = 0;
 
-let ballsData = []
+var ballsData = []
 
 function createBalls(num) {
     for (let i = 0; i < num; i++) {
@@ -12,56 +12,31 @@ function createBalls(num) {
     }
 }
 
-createBalls(20);
+createBalls(1);
 
 for (let i = 0; i < balls.length; i++) {
     balls[i].id = i;
     
-    const randomNum = Math.floor(Math.random() * (0 - 5 + 1) + 5);
-    let x;
-    let y;
-
-        switch (randomNum) {
-        case 1:
-            //bounce side top
-            y = 0;
-            x = Math.floor(Math.random() * (window.innerWidth - 10 + 1) + -10);
-            break;
-        case 2:
-            //bounce side left
-            y = Math.floor(Math.random() * (window.innerHeight - 10 + 1) + -10);
-            x = 0;
-            break;
-            case 3:
-            //bounce side bottom
-            y = window.innerHeight;
-            x = Math.floor(Math.random() * (window.innerWidth - 10 + 1) + -10);
-            break;
-        case 4:
-            //bounce side right
-            y = Math.floor(Math.random() * (window.innerHeight - 10 + 1) + -10);
-            x = window.innerWidth;
-            break;        
-        default:
-            break;
-    }
-
-
+    const temp = Math.random() * 500;
+    const x =  Math.floor(Math.random() * window.innerWidth - temp);;
+    const y =  Math.floor(Math.random() * window.innerHeight - temp);;
 
     balls[i].style.top = y + "px";
     balls[i].style.left = x + "px";
 
-    let temp = Math.random() * 500;
     balls[i].style.width = temp + "px";
     balls[i].style.height = temp + "px";
 
     ballsData.push({
         setX: x,
         setY: y,
-        ticksSinceDistanceSet: 0,
+        size: temp,
+        dir: (Math.random() * 360),
+        colL: false,
+        colR: false,
+        colT: false,
+        colB: false,
     })
-    console.log(ballsData)
-
 }
 
 function gradientFunc() {
