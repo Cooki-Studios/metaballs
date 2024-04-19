@@ -17,8 +17,6 @@
         height: 50px;
         border-radius: 50%;
         position: absolute;
-        transition: all 10ms;
-        transition-timing-function: linear;
     }
 }
 

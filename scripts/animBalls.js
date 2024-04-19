@@ -6,47 +6,18 @@ function animBalls(speed) {
         balls[i].style.top = ballsData[i].setY+"px";
 
         // Collision Detection
-        let temp = (0 - ballsData[i].dir);
         if (ballsData[i].setY + ballsData[i].size >= window.innerHeight) {
             //hit bottom
-            ballsData[i].colL = false;
-            ballsData[i].colR = false;
-            ballsData[i].colT = false;
-
-            if (!ballsData[i].colB) {
-                ballsData[i].colB = true;
-                ballsData[i].dir = temp;
-            }
+            ballsData[i].dir =  -ballsData[i].dir;
         } else if (ballsData[i].setY <= 0) {
             //hit top
-            ballsData[i].colL = false;
-            ballsData[i].colR = false;
-            ballsData[i].colB = false;
-            
-            if (!ballsData[i].colT) {
-                ballsData[i].colT = true;
-                ballsData[i].dir = temp;
-            }
+            ballsData[i].dir =  -ballsData[i].dir;
         } else if (ballsData[i].setX + ballsData[i].size >= window.innerWidth) {
             //hit right
-            ballsData[i].colL = false;
-            ballsData[i].colB = false;
-            ballsData[i].colT = false;
-            
-            if (!ballsData[i].colR) {
-                ballsData[i].colR = true;
-                ballsData[i].dir = temp;
-            }
+            ballsData[i].dir += 90;
         } else if (ballsData[i].setX <= 0) {
             //hit left
-            ballsData[i].colB = false;
-            ballsData[i].colR = false;
-            ballsData[i].colT = false;
-            
-            if (!ballsData[i].colL) {
-                ballsData[i].colL = true;
-                ballsData[i].dir = temp;
-            }
+            ballsData[i].dir -= 90;
         }
     }
 }
