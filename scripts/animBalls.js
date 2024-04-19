@@ -6,20 +6,20 @@ function animBalls(speed) {
         balls[i].style.top = ballsData[i].setY+"px";
 
         // Collision Detection
-        if (ballsData[i].setY + ballsData[i].size >= window.innerHeight) {
+        if (ballsData[i].setY >= window.innerHeight) {
             //hit bottom
             ballsData[i].dir =  -ballsData[i].dir;
-        } else if (ballsData[i].setY <= 0) {
+        } else if (ballsData[i].setY <= 0 - (ballsData[i].size/2)) {
             //hit top
             ballsData[i].dir =  -ballsData[i].dir;
-        } else if (ballsData[i].setX + ballsData[i].size >= window.innerWidth) {
+        } else if (ballsData[i].setX >= window.innerWidth) {
             //hit right
             ballsData[i].dir += 90;
-        } else if (ballsData[i].setX <= 0) {
+        } else if (ballsData[i].setX <= 0 - (ballsData[i].size/2)) {
             //hit left
             ballsData[i].dir -= 90;
         }
     }
 }
 
-window.setInterval(animBalls,0,1);
+window.setInterval(animBalls,0,0.1);

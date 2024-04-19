@@ -12,7 +12,7 @@ function createBalls(num) {
     }
 }
 
-createBalls(1);
+createBalls(20);
 
 for (let i = 0; i < balls.length; i++) {
     balls[i].id = i;
