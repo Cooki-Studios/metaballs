@@ -3,11 +3,15 @@ const metaballs = document.getElementsByClassName("inner-metaballs")[0];
 var gradientRot = 0;
 
 var ballsData = []
+const ballColours = ["#ff000","#00ff00","#0000ff","#ffff00","#00ffff","ff00ff"]
+
+var ballColour = ballColours[Math.floor(Math.random() * ballColours.length)];
 
 function createBalls(num) {
     for (let i = 0; i < num; i++) {
         let div = document.createElement("div");
         div.className = "balls";
+        div.style.backgroundColor = ballColour;
         metaballs.appendChild(div);
     }
 }
