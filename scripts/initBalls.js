@@ -18,12 +18,19 @@ function createBalls(num) {
 
 createBalls(20);
 
+var temp;
+
 for (let i = 0; i < balls.length; i++) {
     balls[i].id = i;
     
-    const temp = Math.random() + 1.5 * 250;
-    const x =  Math.floor(Math.random() * window.innerWidth - temp);;
-    const y =  Math.floor(Math.random() * window.innerHeight - temp);;
+    if (window.innerHeight > window.innerWidth) {
+        temp = Math.random() * (window.innerHeight/2);
+    } else {
+        temp = Math.random() * (window.innerWidth/2);
+    }
+
+    const x =  Math.floor(Math.random() * window.innerWidth);
+    const y =  Math.floor(Math.random() * window.innerHeight);
 
     balls[i].style.top = y + "px";
     balls[i].style.left = x + "px";
