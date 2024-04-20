@@ -8,18 +8,22 @@
     height: 100%;
 
     & div {
-        -webkit-filter: blur(10px);
-        filter: blur(10px);
-        background-color: #000;
+        -webkit-filter: blur(20px);
+        filter: blur(20px);
+        background-color: #00ffff;
         left: 0px;
         top: 0px;
         width: 50px;
         height: 50px;
         border-radius: 50%;
         position: absolute;
-        transition: all 50000ms;
-        transition-timing-function: ease;
     }
+}
+
+.blender {
+    mix-blend-mode: multiply;
+    width: 100%;
+    height: 100%;
 }
 
 .outer-metaballs {
@@ -36,12 +40,6 @@ body::before {
     mask-image: linear-gradient(to bottom, transparent, black);
     background: linear-gradient(to right, #b8f1ff, #f957d6);
     background: linear-gradient(to right in oklch, #b8f1ff, #f957d6);
-}
-
-.blender {
-    mix-blend-mode: multiply;
-    width: 100%;
-    height: 100%;
 }
 
 body {
