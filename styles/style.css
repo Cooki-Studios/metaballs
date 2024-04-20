@@ -12,6 +12,7 @@
     mix-blend-mode: multiply;
     width: 100%;
     height: 100%;
+    mask-image: url(/img/ExitSignMetaballs.svg);
 }
 
 .outer-metaballs {
@@ -23,7 +24,7 @@
 .balls {
     -webkit-filter: blur(20px);
     filter: blur(20px);
-    background-color: #ff00ff;
+    background-color: #00ffff;
     left: 0px;
     top: 0px;
     width: 50px;
@@ -36,18 +37,17 @@ body::before {
     content: "";
     position: absolute;
     inset: 0;
-    -webkit-mask-image: linear-gradient(to bottom, transparent, black);
-    mask-image: linear-gradient(to bottom, transparent, black);
-    background: linear-gradient(to right, #b8f1ff, #f957d6);
-    background: linear-gradient(to right in oklch, #b8f1ff, #f957d6);
+    /* mask-image: linear-gradient(180deg, transparent, black);
+    background: linear-gradient(90deg, #b8f1ff, #f957d6);
+    background: linear-gradient(90deg in oklch, #b8f1ff, #f957d6); */
 }
 
 body {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background: linear-gradient(to right, #ff8585, #def493);
-    background: linear-gradient(to right in oklch, #ff8585, #def493);
+    /* background: linear-gradient(90deg, #ff8585, #def493);
+    background: linear-gradient(90deg in oklch, #ff8585, #def493); */
     width: 100vw;
     height: 100vh;
 }
