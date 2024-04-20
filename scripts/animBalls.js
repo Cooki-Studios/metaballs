@@ -22,4 +22,4 @@ function animBalls(speed) {
     }
 }
 
-window.setInterval(animBalls,0,0.1);
+window.setInterval(animBalls,0,0.25);
