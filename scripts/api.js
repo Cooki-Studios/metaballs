@@ -1,6 +1,6 @@
 class JSBalls {
     static generate(num, colour, bgColour, speed) {
-        document.body.innerHTML += "<link rel='stylesheet' href='styles/style.css'>";
+        document.body.innerHTML += "<link rel='stylesheet' href='../styles/style.css'>";
 
         const blender = document.createElement("div");
         blender.className = "blender";
@@ -15,8 +15,8 @@ class JSBalls {
         outer.appendChild(metaballs);
 
         const balls = document.getElementsByClassName("balls");
-        var gradientRot = 0;
-        var ballsData = [];
+        let gradientRot = 0;
+        const ballsData = [];
 
         if (!num) {
             num = Math.floor(Math.random() * 15) + 1;
@@ -29,7 +29,7 @@ class JSBalls {
             metaballs.appendChild(div);
         }
 
-        var temp;
+        let temp;
 
         for (let i = 0; i < balls.length; i++) {
             balls[i].id = i;
@@ -56,11 +56,11 @@ class JSBalls {
                 dir: (Math.random() * 360),
             })
 
-            var gradStyle = document.head.appendChild(document.createElement("style"));
+            const gradStyle = document.head.appendChild(document.createElement("style"));
 
             function animBalls(speed) {
                 for (let i = 0; i < ballsData.length; i++) {
-                    ballsData[i].setX += speed * Math.cos(ballsData[i].dir * Math.PI / 180);;
+                    ballsData[i].setX += speed * Math.cos(ballsData[i].dir * Math.PI / 180);
                     balls[i].style.left = ballsData[i].setX+"px";
                     ballsData[i].setY += speed * Math.sin(ballsData[i].dir * Math.PI / 180);
                     balls[i].style.top = ballsData[i].setY+"px";
@@ -81,7 +81,7 @@ class JSBalls {
                     }
                 }
 
-                if (Math.floor(gradientRot) == 359) {
+                if (Math.floor(gradientRot) === 359) {
                     gradientRot = 0;
                 } else {
                     gradientRot += 0.05;
